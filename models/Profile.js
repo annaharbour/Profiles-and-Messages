@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { DATE } = require('sequelize');
 const Schema = require('mongoose').Schema;
 
 const ProfileSchema = new mongoose.Schema({
@@ -50,6 +51,31 @@ const ProfileSchema = new mongoose.Schema({
             }
         },
     ],
+    education : [
+      {
+        school: {
+          type: String
+        },
+        degree: {
+          type: String
+        },
+        fieldofstudy: {
+          type: String
+        },
+        from: {
+          type: Date
+        },
+        to: {
+          type: Date
+        },
+        current: {
+          type: String
+        },
+        description: {
+          type: String
+        }
+      }
+    ]
 });
 
 module.exports = mongoose.model('profile', ProfileSchema);
